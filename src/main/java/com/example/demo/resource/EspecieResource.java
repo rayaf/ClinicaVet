@@ -11,7 +11,7 @@ import com.example.demo.domain.Especie;
 import com.example.demo.service.EspecieService;
 
 @RestController
-@RequestMapping("/especies/{id}")
+@RequestMapping("/especies")
 public class EspecieResource {
 	
 	@Autowired
