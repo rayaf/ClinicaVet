@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.example.demo.domain.enums.TipoSexo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
@@ -32,12 +33,12 @@ public class Animal implements Serializable {
 		
 	}
 
-	public Animal(Integer id, String nome, Integer idade, Integer sex, Especie especie) {
+	public Animal(Integer id, String nome, Integer idade, TipoSexo sex, Especie especie) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.idade = idade;
-		this.sex = sex;
+		this.sex = sex.getCod();
 		this.especie = especie;
 	}
 
@@ -57,12 +58,12 @@ public class Animal implements Serializable {
 		this.idade = idade;
 	}
 
-	public Integer getSex() {
-		return sex;
+	public TipoSexo getTipoSexo() {
+		return TipoSexo.toEnum(sex);
 	}
 
-	public void setSex(Integer sex) {
-		this.sex = sex;
+	public void setTipoSexo(TipoSexo sex) {
+		this.sex = sex.getCod();
 	}
 
 	public Especie getEspecie() {
