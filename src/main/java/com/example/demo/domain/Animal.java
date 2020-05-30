@@ -32,6 +32,10 @@ public class Animal implements Serializable {
 	@JoinColumn(name = "especie_id")
 	private Especie especie;
 	
+	@ManyToOne
+	@JoinColumn(name = "estado_id")
+	private Cliente cliente;
+	
 	@OneToMany(mappedBy = "animal")
 	private List<Consulta> consultas = new ArrayList<>();
 	
@@ -39,13 +43,14 @@ public class Animal implements Serializable {
 		
 	}
 
-	public Animal(Integer id, String nome, Integer idade, TipoSexo sex, Especie especie) {
+	public Animal(Integer id, String nome, Integer idade, TipoSexo sex, Especie especie, Cliente cliente) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.idade = idade;
 		this.sex = sex.getCod();
 		this.especie = especie;
+		this.cliente = cliente;
 	}
 
 	public String getNome() {
@@ -82,6 +87,14 @@ public class Animal implements Serializable {
 
 	public Integer getId() {
 		return id;
+	}
+
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
 	}
 
 	@Override
