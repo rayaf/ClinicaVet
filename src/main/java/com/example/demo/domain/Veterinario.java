@@ -29,12 +29,11 @@ public class Veterinario implements Serializable {
 		
 	}
 
-	public Veterinario(Integer id, String nome, String crmv, List<Consulta> consultas) {
+	public Veterinario(Integer id, String nome, String crmv) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.crmv = crmv;
-		this.consultas = consultas;
 	}
 	
 

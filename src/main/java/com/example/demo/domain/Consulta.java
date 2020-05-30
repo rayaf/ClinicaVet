@@ -2,6 +2,7 @@ package com.example.demo.domain;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -23,7 +24,7 @@ public class Consulta implements Serializable{
 	private Integer id;
 	
 	@Temporal(TemporalType.TIMESTAMP)
-	private Timestamp data;
+	private Date data;
 	
 	private String end;
 	private String procedimento;
@@ -42,7 +43,7 @@ public class Consulta implements Serializable{
 		
 	}
 
-	public Consulta(Integer id, Timestamp data, String end, String procedimento, Animal animal,
+	public Consulta(Integer id, Date data, String end, String procedimento, Animal animal,
 			Veterinario veterinario) {
 		super();
 		this.id = id;
@@ -53,7 +54,7 @@ public class Consulta implements Serializable{
 		this.veterinario = veterinario;
 	}
 
-	public Timestamp getData() {
+	public Date getData() {
 		return data;
 	}
 

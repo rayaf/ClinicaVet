@@ -33,14 +33,13 @@ public class Cliente implements Serializable {
 		
 	}
 
-	public Cliente(Integer id, String nome, String end, String tel, String email, List<Animal> animal) {
+	public Cliente(Integer id, String nome, String end, String tel, String email) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.end = end;
 		this.tel = tel;
 		this.email = email;
-		this.animal = animal;
 	}
 
 	public String getNome() {
