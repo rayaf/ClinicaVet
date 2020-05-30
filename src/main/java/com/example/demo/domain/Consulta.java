@@ -13,8 +13,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 @Entity
 public class Consulta implements Serializable{
 	private static final long serialVersionUID = 1L;
@@ -29,12 +27,10 @@ public class Consulta implements Serializable{
 	private String end;
 	private String procedimento;
 	
-	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "animal_id")
 	private Animal animal;
 	
-	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "veterinario_id")
 	private Veterinario veterinario;

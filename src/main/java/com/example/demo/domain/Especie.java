@@ -43,6 +43,13 @@ public class Especie implements Serializable{
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+	public List<Animal> getAnimal() {
+		return animal;
+	}
+
+	public void setAnimal(List<Animal> animal) {
+		this.animal = animal;
+	}
 
 	@Override
 	public int hashCode() {

@@ -10,6 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Veterinario implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -22,6 +24,7 @@ public class Veterinario implements Serializable {
 	private String nome;
 	private String crmv;
 	
+	@JsonIgnore
 	@OneToMany(mappedBy = "veterinario")
 	private List<Consulta> consultas = new ArrayList<>();
 	
